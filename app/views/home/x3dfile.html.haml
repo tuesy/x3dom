@@ -1,0 +1,12 @@
+/ http://doc.x3dom.org/tutorials/models/inline/index.html
+%x3d{width: '500px', height: '400px'}
+  %scene
+    %inline{url: 'assets/deer.x3d', nameSpaceName: "Deer", mapDEFToID: "true", onclick: 'redNose();'}
+:javascript
+  function redNose()
+  {
+    if(document.getElementById('Deer__MA_Nose').getAttribute('diffuseColor')!= '1 0 0')
+        document.getElementById('Deer__MA_Nose').setAttribute('diffuseColor', '1 0 0');
+    else
+        document.getElementById('Deer__MA_Nose').setAttribute('diffuseColor', '0 0 0');
+  }
