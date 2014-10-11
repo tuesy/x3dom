@@ -1,0 +1,20 @@
+/ http://doc.x3dom.org/tutorials/basics/hello/index.html
+%h1 Hello, X3DOM!
+%p This is my first html page with some 3d objects
+%x3d{width: '600px', height: '400px'}
+  %scene
+    %shape
+      %appearance
+        %material{diffuseColor: '1 0 0'}
+      %box
+    %transform{translation: '-3 0 0'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 1 0'}
+        %cone
+    %transform{translation: '3 0 0'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 0 1'}
+        %sphere
+
