@@ -1,0 +1,45 @@
+/ http://doc.x3dom.org/tutorials/basics/htmlCSS/index.html
+- content_for :header do
+  :css
+    x3d
+    {
+      border: 2px solid darkorange;
+      background: rgba(128, 128, 128, 0.4);
+    }
+    body
+    {
+        font-size:110%;
+        font-family:verdana, sans-serif;
+        background-image: url('assets/pattern.png');
+        margin: 3em;
+        color: lightgray;
+    }
+    h1
+    {
+        color: darkorange;
+    }      %h1 Hello, X3DOM!
+%p This is my first html page with some 3d objects
+%x3d{width: '600px', height: '400px'}
+  %scene
+    %shape{onclick: "changeColor();"}
+      %appearance
+        %material#color{diffuseColor: '1 0 0'}
+      %box
+    %transform{translation: '-3 0 0'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 1 0'}
+        %cone
+    %transform{translation: '3 0 0'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 0 1'}
+        %sphere
+:javascript
+  function changeColor()
+  {
+    if(document.getElementById("color").getAttribute('diffuseColor')=="1 0 0")
+       document.getElementById("color").setAttribute('diffuseColor', '0 0 1');
+    else
+       document.getElementById("color").setAttribute('diffuseColor', '1 0 0');
+  }

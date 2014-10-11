@@ -22,4 +22,4 @@ module X3dom
   end
 end
 
-$tutorials = %w(hello)
+$tutorials = %w(hello css)
