@@ -1,0 +1,4 @@
+%h1 x3dom ("X Freedom") Tutorials
+%ul
+  - $tutorials.each do |x|
+    %li= link_to x, controller: :home, action: x
