@@ -28,4 +28,5 @@ group :development, :test do
   gem 'guard-rails'
   gem 'webmock', require: false
   gem 'guard-rspec', require: false
+  gem "better_errors"
 end

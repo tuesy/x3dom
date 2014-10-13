@@ -1,0 +1,71 @@
+- content_for :header do
+  :css
+    x3d
+    {
+      border: 2px solid darkorange;
+      background: rgba(128, 128, 128, 0.4);
+    }
+    body
+    {
+        font-size:110%;
+        font-family:verdana, sans-serif;
+        background-image: url('assets/pattern.png');
+        margin: 3em;
+        color: lightgray;
+    }
+    h1
+    {
+        color: darkorange;
+    }
+
+%x3d{width: '1200px', height: '800px'}
+  %scene
+    / face
+    %shape{onclick: "changeColor();"}
+      %appearance
+        %material#color{diffuseColor: '0.8 0.59 0.48'}
+      %sphere
+    / left ear
+    %transform{translation: '-1.2 1.1 0'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 0 0'}
+        %sphere{radius: '0.7'}
+    / right ear
+    %transform{translation: '1.2 1.1 0'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 0 0'}
+        %sphere{radius: '0.7'}
+    / nose
+    %transform{translation: '0 0 1'}
+      %shape
+        %appearance
+          %material{diffuseColor: '0 0 0'}
+        %sphere{radius: '0.2'}
+    / wooden box
+    %transform{translation: '0 -2 0'}
+      %shape
+        %appearance
+          %ImageTexture{url: 'assets/unsplash_1.JPG'}
+        %box
+    / movie (mp4, ogv)
+    %transform{translation: '3 0 0'}
+      %shape
+        %appearance
+          %MovieTexture{url: 'assets/bigBuckBunny.ogv'}
+        %box
+    / audio (wav, mp3, ogg)
+    / %AudioClip{url: 'assets/Fratres.mp3', loop: 'true', enabled: 'true'}
+
+
+
+:javascript
+  function changeColor()
+  {
+    if(document.getElementById("color").getAttribute('diffuseColor')=="0.8 0.59 0.48")
+      document.getElementById("color").setAttribute('diffuseColor', '1 0 0');
+    else
+      document.getElementById("color").setAttribute('diffuseColor', '0.8 0.59 0.48');
+
+  }

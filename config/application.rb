@@ -22,4 +22,4 @@ module X3dom
   end
 end
 
-$tutorials = %w(hello css textures x3dfile)
+$tutorials = %w(hello css textures x3dfile test)
